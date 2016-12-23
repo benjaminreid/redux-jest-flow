@@ -4,19 +4,21 @@ import { addTodo } from './../actions/todos';
 describe('todos reducer', () => {
 
   it('should return an initial state', () => {
-    expect(
-      reducer(undefined, {})
-    ).toEqual(
-      []
-    );
+    const state = undefined;
+    const action = {};
+    const expectedState = [];
+
+    expect(reducer(state, action)).toEqual(expectedState);
   });
 
   it('should handle addTodo', () => {
-    expect(
-      reducer(undefined, addTodo('Get some milk'))
-    ).toEqual(
-      [{ text: 'Get some milk' }]
-    );
+    const state = undefined;
+    const action = addTodo('Get some milk');
+    const expectedState = [
+      { text: 'Get some milk' },
+    ];
+
+    expect(reducer(state, action)).toEqual(expectedState);
   });
 
 });
