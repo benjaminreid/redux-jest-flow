@@ -1,5 +1,5 @@
 // @flow
 export type TodoAction = {
-  type?: string,
+  type: string,
   text?: string,
 };
