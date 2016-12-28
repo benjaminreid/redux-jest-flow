@@ -1,6 +1,8 @@
 import {
   TODO_ADD,
+  TODO_CLEAR,
   addTodo,
+  clearTodos,
 } from './todos';
 
 describe('todos actions', () => {
@@ -13,6 +15,14 @@ describe('todos actions', () => {
     };
 
     expect(addTodo(text)).toEqual(expectedAction);
+  });
+
+  it('clearTodos should clear all todos', () => {
+    const expectedAction = {
+      type: TODO_CLEAR,
+    };
+
+    expect(clearTodos()).toEqual(expectedAction);
   });
 
 });

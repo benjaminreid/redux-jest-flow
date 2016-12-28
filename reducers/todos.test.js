@@ -1,5 +1,5 @@
 import reducer from './todos';
-import { addTodo } from './../actions/todos';
+import { addTodo, clearTodos } from './../actions/todos';
 
 describe('todos reducer', () => {
 
@@ -17,6 +17,14 @@ describe('todos reducer', () => {
     const expectedState = [
       { text: 'Get some milk' },
     ];
+
+    expect(reducer(state, action)).toEqual(expectedState);
+  });
+
+  it('should handle clearTodos', () => {
+    const state = [{ text: 'Get some milk' }];
+    const action = clearTodos();
+    const expectedState = [];
 
     expect(reducer(state, action)).toEqual(expectedState);
   });
