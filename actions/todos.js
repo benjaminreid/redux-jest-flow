@@ -1,5 +1,5 @@
 // @flow
-import type { TodoAction } from './../types';
+import type { TodoAction, PlainAction } from './../types';
 
 export const TODO_ADD = 'TODO_ADD';
 export const TODO_CLEAR = 'TODO_CLEAR';
@@ -9,6 +9,6 @@ export const addTodo = (text: string):TodoAction => ({
   text,
 });
 
-export const clearTodos = ():TodoAction => ({
+export const clearTodos = ():PlainAction => ({
   type: TODO_CLEAR,
 });
